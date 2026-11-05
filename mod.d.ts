@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2024 The Stdlib Authors.
@@ -16,21 +16,18 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
 
-var reimf = require( '@stdlib/complex-float32-reim' );
-
-
-// MAIN //
+import { Complex64 } from '@stdlib/types/complex';
 
 /**
 * Tests whether two single-precision complex floating-point numbers are equal.
 *
-* @param {Complex64} z1 - first complex number
-* @param {Complex64} z2 - second complex number
-* @returns {boolean} result
+* @param z1 - first complex number
+* @param z2 - second complex number
+* @returns boolean indicating if both complex numbers are equal
 *
 * @example
 * var Complex64 = require( '@stdlib/complex-float32-ctor' );
@@ -41,16 +38,9 @@ var reimf = require( '@stdlib/complex-float32-reim' );
 * var v = isEqual( z1, z2 );
 * // returns true
 */
-function isEqual( z1, z2 ) {
-	var parts1 = reimf( z1 );
-	var parts2 = reimf( z2 );
-	return (
-		parts1[ 0 ] === parts2[ 0 ] &&
-		parts1[ 1 ] === parts2[ 1 ]
-	);
-}
+declare function isEqual( z1: Complex64, z2: Complex64 ): boolean;
 
 
 // EXPORTS //
 
-module.exports = isEqual;
+export = isEqual;
